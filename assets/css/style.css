@@ -1,0 +1,92 @@
+/* UMKM LOKAL - Custom Bootstrap Style */
+/* === Sticky Footer === */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto;
+}
+
+
+/* Warna dan Font Umum */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Tombol */
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+/* Card UMKM (Publik) */
+.card.umkm-card {
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.card.umkm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.card.umkm-card img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Table */
+.table th {
+  background-color: #0d6efd;
+  color: white;
+}
+.table td {
+  vertical-align: middle;
+}
+
+/* Form Card */
+.card-login {
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+.card-login .card-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+/* Responsive */
+@media (max-width: 576px) {
+  .dashboard-container {
+    padding: 25px;
+  }
+  .dashboard-container h1 {
+    font-size: 1.6rem;
+  }
+}
