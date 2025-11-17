@@ -1,18 +1,15 @@
-    </div> <!-- End container -->
-    <footer class="bg-white text-center py-3 border-top small text-muted">
-      &copy; 2025 Sistem Informasi UMKM Lokal | Kelompok 2
-    </footer>
-  </div> <!-- End page-content -->
-</div> <!-- End wrapper -->
+        </div> <!-- end container -->
 
-<script>
-  // Toggle sidebar
-  const toggle = document.getElementById('menu-toggle');
-  const wrapper = document.getElementById('wrapper');
-  toggle.addEventListener('click', () => {
-    wrapper.classList.toggle('toggled');
-  });
-</script>
+        <footer class="bg-white text-center py-3 border-top small text-muted mt-auto">
+            &copy; 2025 Sistem Informasi UMKM Lokal | All Rights Reserved
+        </footer>
+
+    </div> <!-- end page-content-wrapper -->
+
+</div> <!-- end wrapper -->
+
+<!-- Admin JS -->
+<script src="/TUGAS_PEWEB/assets/js/admin.js"></script>
 
 </body>
 </html>

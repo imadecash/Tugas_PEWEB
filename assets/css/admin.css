@@ -1,0 +1,271 @@
+html,
+body {
+  height: 100%;
+}
+
+/* ================================
+   SIDEBAR (DEFAULT MOBILE = TERTUTUP)
+=================================== */
+.sidebar {
+  width: 0;
+  height: 100vh;
+  overflow-x: hidden; /* hanya sembunyikan horizontal */
+  overflow-y: auto; /* biarkan isi muncul */
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  z-index: 1030;
+
+  background: linear-gradient(180deg, #0048b4, #0066ff);
+  color: white;
+
+  padding-top: 20px;
+  transition: width 0.3s ease;
+}
+
+/* Jika sidebar aktif */
+.sidebar.active {
+  width: 250px;
+}
+
+/* Title */
+.sidebar-header h4 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Menu items */
+.list-group-item {
+  background: transparent;
+  color: #e9e9e9;
+  border: none;
+  padding: 14px 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 16px;
+  white-space: nowrap;
+
+  transition: all 0.2s ease;
+}
+
+.list-group-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding-left: 28px;
+}
+
+.logout {
+  color: #ffdddd !important;
+}
+
+/* ================================
+   CONTENT WRAPPER
+=================================== */
+#page-content-wrapper {
+  width: 100%;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+  margin: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#menu-toggle {
+  background: transparent;
+  border: none;
+  padding-right: 10px;
+  color: #0066ff;
+}
+
+/* ================================
+   DESKTOP MODE
+=================================== */
+@media (min-width: 992px) {
+  .sidebar {
+    width: 250px !important;
+    overflow: visible;
+  }
+
+  .sidebar.active {
+    width: 250px !important;
+  }
+
+  #page-content-wrapper {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+}
+
+/* ================================
+   STICKY FOOTER (SELALU DI BAWAH)
+================================ */
+#page-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full tinggi halaman */
+}
+
+.content-wrapper {
+  flex: 1; /* isi konten mendorong footer ke bawah */
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* ========================================
+   DASHBOARD WELCOME BOX
+========================================= */
+.dashboard-welcome {
+  background: linear-gradient(90deg, #0066ff, #4da3ff);
+  color: white;
+  border: none;
+  border-radius: 12px;
+}
+
+/* ========================================
+   DASHBOARD CARDS
+========================================= */
+.dash-card {
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e6e6e6;
+}
+
+.dash-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ICON AREA */
+.dash-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  margin: 0 auto;
+}
+
+/* BUTTON */
+.dash-card a.btn {
+  border-radius: 10px;
+  padding: 8px 0;
+  font-weight: 600;
+}
+
+/* RESPONSIVE FIX UNTUK MOBILE */
+@media (max-width: 576px) {
+  .dash-card {
+    padding: 20px;
+  }
+  .dash-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
+}
+
+/* ===== STYLE HALAMAN DATA UMKM ===== */
+
+.page-header {
+  padding: 12px 0;
+}
+
+/* Wrapper tabel */
+.custom-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: white;
+  padding: 12px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e9ecef;
+}
+
+/* Header tabel */
+.custom-table thead tr {
+  background: #0d6efd !important;
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+/* Isi tabel */
+.custom-table tbody td {
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+/* Foto */
+.umkm-img {
+  border-radius: 8px;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Tombol */
+.custom-table td .btn {
+  margin: 2px;
+}
+
+/* Responsive fixes */
+@media (max-width: 576px) {
+  .custom-table thead {
+    font-size: 12px;
+  }
+  .custom-table tbody td {
+    font-size: 12px;
+  }
+  .umkm-img {
+    width: 45px;
+    height: 45px;
+  }
+  .page-header h4 {
+    font-size: 18px;
+  }
+}
+
+/* Perbaikan tombol responsif pada halaman laporan */
+.laporan-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+  .laporan-actions {
+    flex-direction: column; /* Bikin vertikal */
+    width: 100%;
+  }
+
+  .laporan-actions a {
+    width: 100%; /* Bikin tombol full width */
+    text-align: center;
+  }
+}

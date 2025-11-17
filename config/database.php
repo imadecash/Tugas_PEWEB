@@ -1,12 +1,8 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "db_umkm";
+$koneksi = mysqli_connect("localhost", "root", "", "db_umkm");
 
-$conn = mysqli_connect($host, $user, $pass, $db);
-
-if (!$conn) {
+// cek koneksi
+if (!$koneksi) {
     die("Koneksi gagal: " . mysqli_connect_error());
 }
 ?>

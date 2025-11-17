@@ -14,7 +14,7 @@ $pdf->Cell(10,10,'No',1,0,'C');
 $pdf->Cell(80,10,'Kategori',1,0,'C');
 $pdf->Cell(40,10,'Jumlah UMKM',1,1,'C');
 
-$query = mysqli_query($conn, "
+$query = mysqli_query($koneksi, "
   SELECT kategori.nama_kategori, COUNT(umkm.id_umkm) AS total_umkm
   FROM kategori
   LEFT JOIN umkm ON kategori.id_kategori = umkm.id_kategori

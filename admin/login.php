@@ -6,42 +6,49 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Validasi ke database
-    $query = mysqli_query($conn, "SELECT * FROM admin WHERE username='$username' AND password='$password'");
-    $data = mysqli_fetch_assoc($query);
+    $query = mysqli_query($koneksi, "SELECT * FROM admin WHERE username='$username' AND password='$password'");
+    $cek = mysqli_num_rows($query);
 
-    if ($data) {
-        $_SESSION['admin'] = $data['username'];
+    if ($cek > 0) {
+        $_SESSION['admin_logged_in'] = true;
+        $_SESSION['admin_username'] = $username;
+
         header("Location: index.php");
         exit;
     } else {
-        echo "<script>alert('Username atau password salah!');</script>";
+        $error = "Username atau password salah!";
     }
 }
+
+$title = "Login Admin";
+$login_page = true;
+
+// Header login
+include '../includes/header_login.php';
 ?>
 
-<?php include('../includes/header.php'); ?>
-<div class="row justify-content-center">
-  <div class="col-md-4">
-    <div class="card card-login">
-      <div class="card-header bg-primary text-white text-center">
-        <h5>Login Admin</h5>
-      </div>
-      <div class="card-body">
-        <form method="post">
-          <div class="mb-3">
-            <label class="form-label">Username</label>
-            <input type="text" name="username" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="password" name="password" class="form-control" required>
-          </div>
-          <button type="submit" name="login" class="btn btn-primary w-100">Masuk</button>
-        </form>
-      </div>
-    </div>
+<div class="login-container">
+  <div class="login-card">
+
+    <h3 class="login-title">Login Admin</h3>
+    <p class="login-subtitle">Masuk ke dashboard admin</p>
+
+    <?php if (isset($error)): ?>
+      <div class="alert alert-danger py-2"><?= $error ?></div>
+    <?php endif; ?>
+
+    <form method="POST">
+        <div class="input-group-custom">
+            <label>Username</label>
+            <input type="text" name="username" required>
+        </div>
+
+        <div class="input-group-custom">
+            <label>Password</label>
+            <input type="password" name="password" required>
+        </div>
+
+        <button type="submit" name="login" class="btn-login">Masuk</button>
+    </form>
   </div>
 </div>
-
-

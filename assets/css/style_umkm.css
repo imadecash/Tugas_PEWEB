@@ -1,0 +1,106 @@
+/* --- CARD STYLE --- */
+.umkm-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 10px;
+}
+
+.umkm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* --- GAMBAR CARD --- */
+.umkm-img {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* --- BUTTON STYLE --- */
+.btn-primary {
+  border-radius: 15px;
+}
+
+.btn-outline-primary {
+  border-radius: 5px;
+}
+
+/* --- TEKS --- */
+h2 {
+  letter-spacing: 0.5px;
+}
+
+p.text-muted {
+  font-size: 20px;
+}
+
+/* =======================================================
+   =============== RESPONSIVE ADJUSTMENTS ================
+   ======================================================= */
+
+/* --- Tablet (≤ 992px) --- */
+@media (max-width: 992px) {
+  .umkm-img {
+    height: 200px; /* gambar sedikit lebih kecil */
+  }
+
+  p.text-muted {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+}
+
+/* --- HP Besar / Tablet Mini (≤ 768px) --- */
+@media (max-width: 768px) {
+  .umkm-img {
+    height: 180px;
+  }
+
+  .umkm-card {
+    margin-bottom: 15px; /* beri jarak antar card */
+  }
+
+  p.text-muted {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary,
+  .btn-outline-primary {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+
+/* --- HP Kecil (≤ 576px) --- */
+@media (max-width: 576px) {
+  .umkm-img {
+    height: 150px;
+  }
+
+  .umkm-card {
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p.text-muted {
+    font-size: 14px;
+  }
+
+  .btn-primary,
+  .btn-outline-primary {
+    width: 100%; /* tombol full width untuk HP */
+    font-size: 14px;
+    padding: 10px;
+  }
+}
