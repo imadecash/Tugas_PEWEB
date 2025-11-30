@@ -1,4 +1,7 @@
-body {
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   background-color: #f1f3f5;
 }
 .navbar {
@@ -7,17 +10,19 @@ body {
 
 /* Background */
 .login-container {
-  min-height: 91.5vh;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;  <-- Removed to fix scroll */
+  /* align-items: center;      <-- Removed to fix scroll */
   padding: 20px;
+  padding-top: 80px; /* Add padding for fixed navbar */
   background: linear-gradient(135deg, #1e90ff, #6a5acd);
 }
 
 /* Card */
 .login-card {
   width: 380px;
+  margin: auto; /* Magic centering that allows scroll */
   padding: 35px 30px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);

@@ -12,27 +12,31 @@ include('../../includes/header_admin.php');
 ?>
 
 <div class="container-fluid px-4 py-4">
-  <div class="card shadow-sm">
-    <div class="card-header bg-primary text-white fw-bold">
-      <i class="bi bi-plus-circle"></i> Tambah Kategori UMKM
-    </div>
-    <div class="card-body">
-      <form method="post" class="form-kategori">
-        <div class="mb-3">
-          <label for="nama_kategori" class="form-label">Nama Kategori</label>
-          <input type="text" name="nama_kategori" id="nama_kategori" 
-                 class="form-control input-kategori" placeholder="Masukkan nama kategori" required>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card border-0 shadow-sm rounded-4">
+        <div class="card-header bg-white border-bottom-0 pt-4 px-4">
+          <h5 class="fw-bold text-primary mb-0">Tambah Kategori Baru</h5>
         </div>
+        <div class="card-body p-4">
+          <form method="post" class="form-kategori">
+            <div class="mb-4">
+              <label for="nama_kategori" class="form-label small fw-bold text-muted">Nama Kategori</label>
+              <input type="text" name="nama_kategori" id="nama_kategori" 
+                     class="form-control bg-light" placeholder="Masukkan nama kategori" required>
+            </div>
 
-        <div class="text-end">
-          <a href="data.php" class="btn btn-secondary">
-            <i class="bi bi-arrow-left"></i> Kembali
-          </a>
-          <button type="submit" name="simpan" class="btn btn-primary">
-            <i class="bi bi-save"></i> Simpan
-          </button>
+            <div class="d-flex justify-content-end gap-2">
+              <a href="data.php" class="btn btn-light rounded-pill px-4 fw-bold">
+                Batal
+              </a>
+              <button type="submit" name="simpan" class="btn btn-primary rounded-pill px-4 fw-bold">
+                Simpan Data
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
